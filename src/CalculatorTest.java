@@ -1,4 +1,5 @@
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,7 +17,7 @@ public class CalculatorTest {
 	public void setUp() throws Exception {
 		calculator.clear();
 	}
-
+	
 	@Test
 	public void testAdd() {
 		calculator.add(2);
@@ -47,6 +48,7 @@ public class CalculatorTest {
 	@Test (timeout = 1000)
 	public void testSquareRoot() {//time limited test
 		calculator.squareRoot(4);
+		new Throwable();
 		assertEquals(2, calculator.getResult());
 	}
 	
